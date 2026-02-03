@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nesmarc Lunod | Crypto Trading, Gaming & Creative Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #1e293b;
+            --accent-color: #3b82f6;
+            --creative-color: #8b5cf6;
+            --gaming-color: #10b981;
+            --crypto-color: #f59e0b;
+            --text-light: #f1f5f9;
+            --text-muted: #94a3b8;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        header {
+            background-color: rgba(15, 23, 42, 0.95);
+            color: var(--text-light);
+            padding: 1.5rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        header.scrolled {
+            padding: 1rem 0;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-light);
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+            position: relative;
+        }
+        
+        .logo span::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover span::after {
+            transform: scaleX(1);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        nav ul li {
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            padding: 5px 0;
+            opacity: 0.8;
+        }
+        
+        nav ul li a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .hero {
+            padding: 10rem 0 6rem;
+            background: var(--gradient);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .profile-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transition: var(--transition);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .profile-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+            border-color: rgba(59, 130, 246, 0.6);
+        }
+        
+        .profile-image-container::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--accent-color);
+            border-radius: 25px;
+            top: 20px;
+            left: 20px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+        
+        .hero-text .title {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .hero-text .title i {
+            font-size: 1.3rem;
+        }
+        
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .highlight.crypto {
+            color: var(--crypto-color);
+        }
+        
+        .highlight.gaming {
+            color: var(--gaming-color);
+        }
+        
+        .highlight.creative {
+            color: var(--creative-color);
+        }
+        
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: rgba(59, 130, 246, 0.2);
+            z-index: -1;
+        }
+        
+        .highlight.crypto::after {
+            background-color: rgba(245, 158, 11, 0.2);
+        }
+        
+        .highlight.gaming::after {
+            background-color: rgba(16, 185, 129, 0.2);
+        }
+        
+        .highlight.creative::after {
+            background-color: rgba(139, 92, 246, 0.2);
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--accent-color);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: 2px solid var(--accent-color);
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-color);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .cta-button:hover::before {
+            left: 0;
+        }
+        
+        .cta-button:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            position: relative;
+            font-weight: 800;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 4rem;
+        }
+        
+        .expertise {
+            padding: 6rem 0;
+            background-color: var(--primary-color);
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .expertise-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 2.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .expertise-card.crypto {
+            border-color: rgba(245, 158, 11, 0.2);
+        }
+        
+        .expertise-card.gaming {
+            border-color: rgba(16, 185, 129, 0.2);
+        }
+        
+        .expertise-card.creative {
+            border-color: rgba(139, 92, 246, 0.2);
+        }
+        
+        .expertise-card.marketing {
+            border-color: rgba(239, 68, 68, 0.2);
+        }
+        
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--accent-color);
+        }
+        
+        .expertise-card.crypto::before {
+            background: var(--crypto-color);
+        }
+        
+        .expertise-card.gaming::before {
+            background: var(--gaming-color);
+        }
+        
+        .expertise-card.creative::before {
+            background: var(--creative-color);
+        }
+        
+        .expertise-card.marketing::before {
+            background: #ef4444;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .expertise-card.crypto:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+        
+        .expertise-card.gaming:hover {
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+        
+        .expertise-card.creative:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+        
+        .expertise-card.marketing:hover {
+            border-color: rgba(239, 68, 68, 0.4);
+        }
+        
+        .expertise-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .expertise-card.crypto .expertise-icon {
+            color: var(--crypto-color);
+        }
+        
+        .expertise-card.gaming .expertise-icon {
+            color: var(--gaming-color);
+        }
+        
+        .expertise-card.creative .expertise-icon {
+            color: var(--creative-color);
+        }
+        
+        .expertise-card.marketing .expertise-icon {
+            color: #ef4444;
+        }
+        
+        .expertise-card h3 {
+            font-size: 1.6rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .expertise-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1.5rem;
+        }
+        
+        .skill-tag {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--accent-color);
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .expertise-card.crypto .skill-tag {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: var(--crypto-color);
+        }
+        
+        .expertise-card.gaming .skill-tag {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--gaming-color);
+        }
+        
+        .expertise-card.creative .skill-tag {
+            background-color: rgba(139, 92, 246, 0.1);
+            color: var(--creative-color);
+        }
+        
+        .expertise-card.marketing .skill-tag {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+        }
+        
+        .skills {
+            padding: 6rem 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .skill-category {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 2.5rem;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+        
+        .category-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+        }
+        
+        .category-header h3 {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            font-weight: 700;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .skill-item {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--accent-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .skill-item:hover {
+            background-color: rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .tech-stack {
+            padding: 6rem 0;
+            background-color: var(--primary-color);
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tech-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        
+        .tech-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .tech-card h4 {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .tech-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .projects {
+            padding: 6rem 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 2.5rem;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        
+        .project-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-card h3 {
+            font-size: 1.6rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .project-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        
+        .contact {
+            padding: 6rem 0;
+            background-color: var(--primary-color);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-text h4 {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .contact-text p {
+            color: var(--text-muted);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 3rem 0;
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-content p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+            
+            .hero-text p {
+                max-width: 100%;
+            }
+            
+            .profile-image {
+                max-width: 300px;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            nav ul {
+                gap: 1.5rem;
+            }
+            
+            .hero {
+                padding: 8rem 0 4rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .expertise-grid, .skills-grid, .tech-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .expertise-card, .skill-category, .project-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container header-content">
+            <div class="logo">Nesmarc Lunod</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="profile-image-container">
+                <img src="nesmark.jpg" alt="Nesmarc Lunod" class="profile-image">
+            </div>
+            <div class="hero-text">
+                <h1>Nesmarc Lunod</h1>
+                <div class="title">
+                    <i class="fas fa-star"></i> Crypto Trading, Mobile Gaming & Creative Specialist
+                </div>
+                <p>Expert in <span class="highlight crypto">crypto trading strategies</span>, <span class="highlight gaming">competitive mobile gaming</span>, and <span class="highlight creative">creative digital content</span>. Specialized in photography, video editing, and digital marketing across multiple platforms.</p>
+                <p>Combining analytical trading skills with creative expertise to build engaging digital experiences and profitable online ventures. Passionate about emerging technologies, gaming ecosystems, and visual storytelling.</p>
+                <a href="#contact" class="cta-button">
+                    Connect With Me
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <h2 class="section-title">Areas of Expertise</h2>
+            <p class="section-subtitle">Specialized skills across multiple digital domains</p>
+            
+            <div class="expertise-grid">
+                <div class="expertise-card crypto">
+                    <div class="expertise-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Crypto Trading</h3>
+                    <p>Technical analysis, market trends, risk management, and portfolio optimization in cryptocurrency markets. Experience with multiple trading platforms and strategies for maximizing returns.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Technical Analysis</span>
+                        <span class="skill-tag">Risk Management</span>
+                        <span class="skill-tag">Portfolio Strategy</span>
+                        <span class="skill-tag">Market Research</span>
+                    </div>
+                </div>
+                
+                <div class="expertise-card gaming">
+                    <div class="expertise-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Mobile Gaming</h3>
+                    <p>Competitive gameplay, strategy development, game mechanics analysis, and community engagement across popular mobile gaming platforms. Focus on performance optimization and competitive edge.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Competitive Play</span>
+                        <span class="skill-tag">Strategy Development</span>
+                        <span class="skill-tag">Game Analysis</span>
+                        <span class="skill-tag">Community Building</span>
+                    </div>
+                </div>
+                
+                <div class="expertise-card creative">
+                    <div class="expertise-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Photography & Editing</h3>
+                    <p>Professional photography, photo editing, visual storytelling, and content creation. Expertise in Adobe Creative Suite, Lightroom, and mobile editing applications for stunning visual content.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Photo Editing</span>
+                        <span class="skill-tag">Visual Storytelling</span>
+                        <span class="skill-tag">Adobe Creative Suite</span>
+                        <span class="skill-tag">Content Creation</span>
+                    </div>
+                </div>
+                
+                <div class="expertise-card marketing">
+                    <div class="expertise-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Digital Marketing</h3>
+                    <p>Social media marketing, content strategy, brand development, and audience engagement across digital platforms. Data-driven approach to maximize reach and conversion rates.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Social Media Strategy</span>
+                        <span class="skill-tag">Content Marketing</span>
+                        <span class="skill-tag">Brand Development</span>
+                        <span class="skill-tag">Audience Engagement</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical & Creative Skills</h2>
+            <p class="section-subtitle">Comprehensive abilities across technical, analytical, and creative domains</p>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>Crypto & Trading</h3>
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">Technical Analysis</span>
+                        <span class="skill-item">Risk Management</span>
+                        <span class="skill-item">Market Research</span>
+                        <span class="skill-item">Portfolio Management</span>
+                        <span class="skill-item">Trading Platforms</span>
+                        <span class="skill-item">Blockchain Fundamentals</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>Creative & Editing</h3>
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">Adobe Photoshop</span>
+                        <span class="skill-item">Lightroom</span>
+                        <span class="skill-item">Premiere Pro</span>
+                        <span class="skill-item">Photo Composition</span>
+                        <span class="skill-item">Video Editing</span>
+                        <span class="skill-item">Color Grading</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Marketing & Analytics</h3>
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">Social Media Strategy</span>
+                        <span class="skill-item">Content Creation</span>
+                        <span class="skill-item">Audience Analytics</span>
+                        <span class="skill-item">Campaign Management</span>
+                        <span class="skill-item">SEO Fundamentals</span>
+                        <span class="skill-item">Engagement Optimization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-stack">
+        <div class="container">
+            <h2 class="section-title">Tools & Platforms</h2>
+            <p class="section-subtitle">Technology stack and platforms I work with</p>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <h4>Crypto Platforms</h4>
+                    <p>Binance, Coinbase, TradingView</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h4>Gaming Platforms</h4>
+                    <p>Mobile, Console, PC Gaming</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h4>Creative Tools</h4>
+                    <p>Adobe Suite, Lightroom, VSCO</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Analytics</h4>
+                    <p>Google Analytics, Social Insights</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h4>Content Platforms</h4>
+                    <p>YouTube, Instagram, TikTok</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Mobile Apps</h4>
+                    <p>Editing, Trading, Gaming Apps</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects & Achievements</h2>
+            <p class="section-subtitle">Notable accomplishments across my areas of expertise</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Gaming Tournament Wins</h3>
+                    <p>Multiple championship wins in competitive mobile gaming tournaments with strategic gameplay and team coordination achievements.</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Crypto Portfolio Growth</h3>
+                    <p>Consistent portfolio growth through strategic cryptocurrency investments and timely market analysis over multiple market cycles.</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h3>Photography Exhibits</h3>
+                    <p>Featured photography work in digital exhibitions and social media campaigns with high engagement and recognition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Interested in collaboration or have questions about my work?</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>nesmarc.lunod@example.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p>+1 (234) 567-8900</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Location</h4>
+                            <p>Santa fe, Bantayan island, cebu, Philippines</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Nesmarc Lunod</h3>
+                <p>Crypto Trading, Mobile Gaming & Creative Specialist</p>
+                <div class="copyright">
+                    © 2024 Nesmarc Lunod. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        document.querySelectorAll('nav a, .cta-button').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetSection = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.expertise-card, .skill-category, .tech-card, .project-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const profileImage = document.querySelector('.profile-image');
+            profileImage.style.opacity = '0';
+            profileImage.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                profileImage.style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                profileImage.style.opacity = '1';
+                profileImage.style.transform = 'translateY(0)';
+            }, 300);
+            
+            const heroText = document.querySelector('.hero-text');
+            heroText.style.opacity = '0';
+            heroText.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                heroText.style.transition = 'opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s';
+                heroText.style.opacity = '1';
+                heroText.style.transform = 'translateY(0)';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
